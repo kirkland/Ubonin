@@ -43,9 +43,11 @@
 
 <div id="mini-header">
 	<div class="container">
-		<div id="shopping-cart">
-			<a href="/cart">Your shopping cart contains {{ cart.item_count }} {{ cart.item_count | pluralize: 'item', 'items' }}</a>
-		</div>
+    {% if cart.item_count > 0 %}
+      <div id="shopping-cart">
+        <a href="/cart">Your shopping cart contains {{ cart.item_count }} {{ cart.item_count | pluralize: 'item', 'items' }}</a>
+      </div>
+    {% endif %}
 		<div id="search-box">
 			<form action="/search" method="get">
 				<input type="text" name="q" id="q" />
@@ -57,12 +59,9 @@
 
 <div id="layout">
 	<div class="container">
-		<div id="layout-left" {% if template != "cart" %}{% if template != "product" %}style="width:619px"{% endif %}{% endif %}>{% if template == "search" %}
-			<h1>Search Results</h1>{% endif %}
-			{{ content_for_layout }}
-		</div>{% if template != "cart" %}{% if template != "product" %}
 
-		<div id="layout-right">
+
+		<div id="layout-sidemenu">
 			{% if template == "index" %}
 			{% if blogs.news.articles.size > 0 %}
     	<a href="{{ shop.url }}/blogs/news.xml"><img src="{{ 'feed.png' | asset_url }}" alt="Subscribe" class="feed" /></a>
@@ -110,7 +109,11 @@
 				</li>{% endfor %}
 			</ul>
 			{% endif %}
-		</div>{% endif %}{% endif %}
+		</div>
+		<div id="layout-body" {% if template != "cart" %}{% if template != "product" %}style="width:619px"{% endif %}{% endif %}>{% if template == "search" %}
+			<h1>Search Results</h1>{% endif %}
+			{{ content_for_layout }}
+		</div>{% if template != "cart" %}{% if template != "product" %}{% endif %}{% endif %}
 	</div>
 </div>
 
