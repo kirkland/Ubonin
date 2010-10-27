@@ -60,7 +60,7 @@
 <div id="layout">
   <div class="container">
     <div id="layout-sidemenu">
-
+  {% if template != "product" %}
 <h3>Products</h3>
 <ul id="product_categories">
   {% for link in linklists.products.links %}
@@ -76,8 +76,9 @@
     			<small>{{ article.content | strip_html | truncatewords: 12 }}</small>
     		</li>{% endfor %}
     	</ul>
-    	{% endif %}
-		</div>
+  {% endif %}
+  {% endif %}
+</div>
 		<div id="layout-body" {% if template != "cart" %}{% if template != "product" %}style="width:619px"{% endif %}{% endif %}>{% if template == "search" %}
 			<h1>Search Results</h1>{% endif %}
 			{{ content_for_layout }}
