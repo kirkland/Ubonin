@@ -59,26 +59,64 @@
 
 <div id="layout">
   <div class="container">
-    <div id="layout-sidemenu">
-  {% if template != "product" %} {% if template != "cart" %}
-<h3>Products</h3>
-<ul id="product_categories">
-  {% for link in linklists.products.links %}
-    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-  {% endfor %}
-</ul>
 
-{% if blogs.news.articles.size > 0 %}
-    	<a href="{{ shop.url }}/blogs/news.xml"><img src="{{ 'feed.png' | asset_url }}" alt="Subscribe" class="feed" /></a>
-    	<h3><a href="/blogs/news">More news</a></h3>
-    	<ul id="blogs">{% for article in blogs.news.articles limit: 6 %}
-    		<li><a href="{{ article.url }}">{{ article.title | strip_html | truncate: 30 }}</a><br />
-    			<small>{{ article.content | strip_html | truncatewords: 12 }}</small>
-    		</li>{% endfor %}
-    	</ul>
-  {% endif %}
-  {% endif %} {% endif %}
+
+
+
+<div id="layout-sidemenu">
+  {% if template != "product" %} {% if template != "cart" %} {% if template != "index" %}
+    <h3>Products</h3>
+    <ul id="product_categories">
+      {% for link in linklists.products.links %}
+        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+      {% endfor %}
+    </ul>
+
+    {% if blogs.news.articles.size > 0 %}
+      <a href="{{ shop.url }}/blogs/news.xml"><img src="{{ 'feed.png' | asset_url }}" alt="Subscribe" class="feed" /></a>
+      <h3><a href="/blogs/news">More news</a></h3>
+      <ul id="blogs">
+        {% for article in blogs.news.articles limit: 6 %}
+          <li><a href="{{ article.url }}">{{ article.title | strip_html | truncate: 30 }}</a><br /><small>{{ article.content | strip_html | truncatewords: 12 }}</small></li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endif %} {% endif %} {% endif %}
+
+   {% if template == "index" %}
+
+
+
+<div id="category-picture-links" class="center">
+
+  <div class="category-picture-link">
+    <a href="http://ubonin.myshopify.com/collections/bracelets"> 
+      <img height="115" width="115" src={{ 'featured_bracelet.jpg' | asset_url }} /> 
+      <p class="caption">Bracelets</p>
+    </a>
+  </div>
+  <div class="category-picture-link">
+    <a href="http://ubonin.myshopify.com/collections/necklaces">
+      <img height="115" width="115" src={{ 'featured_necklace.jpg' | asset_url }} />
+      <p class="caption">Necklaces</p>
+    </a>
+  </div>
+  <div class="category-picture-link">
+    <a href="http://ubonin.myshopify.com/collections/earrings">
+      <img height="115" width="115" src={{ 'featured_earrings.jpg' | asset_url }} />
+      <p class="caption">Earrings</p>
+    </a>
+  </div>
 </div>
+
+
+
+   {% endif %}
+</div>
+
+
+
+
 		<div id="layout-body" {% if template != "cart" %}{% if template != "product" %}style="width:619px"{% endif %}{% endif %}>{% if template == "search" %}
 			<h1>Search Results</h1>{% endif %}
 			{{ content_for_layout }}

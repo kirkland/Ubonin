@@ -4,37 +4,14 @@
       <h3 class="article-head-title">
         <a href="{{blogs.news.articles.first.url}}">{{ blogs.news.articles.first.title }}</a>
       </h3>
-      
+   
       <p>
-      {% if blog.comments_enabled? %}
+      {% if blog.comments_enabled? %} 
         <a href="{{blogs.news.articles.first.url}}#comments">{{ blogs.news.articles.first.comments_count }} comments</a>
         &mdash; 
-      {% endif %}
+      {% endif %} 
       posted {{ blogs.news.articles.first.created_at | date: "%Y %h" }} by {{ blogs.news.articles.first.author }}</p>
       <div class="article-body textile">
-        {{ blogs.news.articles.first.content }}
-      </div>    
+        {{ blogs.news.articles.first.content }} 
+      </div>   
     </div>
-
-
-
-<div id="category-picture-links" class="center">
-  <a href="http://ubonin.myshopify.com/collections/bracelets">
-    <div class="category-picture-link">
-      <img height="115" width="115" src={{ 'featured_bracelet.jpg' | asset_url }} /> 
-      <p class="caption">Bracelets</p>
-    </div>
-  </a>
-  <a href="http://ubonin.myshopify.com/collections/necklaces">
-    <div class="category-picture-link">
-      <img height="115" width="115" src={{ 'featured_necklace.jpg' | asset_url }} />
-      <p class="caption">Necklaces</p>
-    </div>
-  </a>
-  <a href="http://ubonin.myshopify.com/collections/earrings">
-    <div class="category-picture-link">
-      <img height="115" width="115" src={{ 'featured_earrings.jpg' | asset_url }} />
-      <p class="caption">Earrings</p>
-    </div>
-  </a>
-</div>
