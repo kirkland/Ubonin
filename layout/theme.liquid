@@ -64,7 +64,7 @@
 
 
 <div id="layout-sidemenu">
-  {% if template != "product" %} {% if template != "cart" %} {% if template != "index" %}
+  {% if template != "product" %} {% if template != "cart" %}
     <h3>Products</h3>
     <ul id="product_categories">
       {% for link in linklists.products.links %}
@@ -72,6 +72,7 @@
       {% endfor %}
     </ul>
 
+    {% if template != "index" %}
     {% if blogs.news.articles.size > 0 %}
       <a href="{{ shop.url }}/blogs/news.xml"><img src="{{ 'feed.png' | asset_url }}" alt="Subscribe" class="feed" /></a>
       <h3><a href="/blogs/news">More news</a></h3>
@@ -91,19 +92,19 @@
 
   <div class="category-picture-link">
     <a href="http://ubonin.myshopify.com/collections/bracelets"> 
-      <img height="115" width="115" src={{ 'featured_bracelet.jpg' | asset_url }} /> 
+      <img height="90" width="90" src={{ 'featured_bracelet.jpg' | asset_url }} /> 
       <p class="caption">Bracelets</p>
     </a>
   </div>
   <div class="category-picture-link">
     <a href="http://ubonin.myshopify.com/collections/necklaces">
-      <img height="115" width="115" src={{ 'featured_necklace.jpg' | asset_url }} />
+      <img height="90" width="90" src={{ 'featured_necklace.jpg' | asset_url }} />
       <p class="caption">Necklaces</p>
     </a>
   </div>
   <div class="category-picture-link">
     <a href="http://ubonin.myshopify.com/collections/earrings">
-      <img height="115" width="115" src={{ 'featured_earrings.jpg' | asset_url }} />
+      <img height="90" width="90" src={{ 'featured_earrings.jpg' | asset_url }} />
       <p class="caption">Earrings</p>
     </a>
   </div>
