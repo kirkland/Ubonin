@@ -14,5 +14,5 @@ unzip "$1" -d temp
 
 dirs=( layout templates config assets )
 for dir in ${dirs[@]}; do
-  mv temp/www-ubonin-com-main/$dir/* $dir
+  mv temp/ubonin-myshopify-com-main/$dir/* $dir
 done
