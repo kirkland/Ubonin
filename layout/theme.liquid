@@ -72,6 +72,13 @@
       {% endfor %}
     </ul>
 
+{% if template == "index" %}
+    <div id="side-bulletin">
+      Free Shipping
+      <br/>in 2010!
+    </div>
+{% endif %}
+
     {% if template != "index" %}
     {% if blogs.news.articles.size > 0 %}
       <a href="{{ shop.url }}/blogs/news.xml"><img src="{{ 'feed.png' | asset_url }}" alt="Subscribe" class="feed" /></a>
