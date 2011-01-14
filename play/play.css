@@ -1,0 +1,27 @@
+#main {
+    width: 650px;
+    float: left;
+    height: 500px;
+}
+
+.product {
+    float: left;
+    height: 260px;
+    width: 216px;
+}
+
+.product img {
+    padding: 3px;
+    border: 1px solid #F6E56D;
+}
+
+.product_title, .product_price {
+    font-size: 12px;
+    width: 200px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.product_price {
+    font-size: 10px;
+}
