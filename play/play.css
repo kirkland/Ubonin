@@ -6,7 +6,6 @@
 
 .product {
     float: left;
-    height: 260px;
     width: 216px;
 }
 
@@ -23,5 +22,5 @@
 }
 
 .product_price {
-    font-size: 10px;
+    font-size: 11px;
 }
