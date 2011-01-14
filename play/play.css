@@ -7,11 +7,12 @@
 .product {
     float: left;
     width: 216px;
+    height: 350px;
 }
 
 .product img {
-    padding: 3px;
-    border: 1px solid #F6E56D;
+    background-color: #E1DDC8;
+    padding: 5px;
 }
 
 .product_title, .product_price {
@@ -19,6 +20,10 @@
     width: 200px;
     text-align: center;
     margin-top: 10px;
+}
+
+.product_title {
+    height: 30px
 }
 
 .product_price {
