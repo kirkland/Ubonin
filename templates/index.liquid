@@ -1,4 +1,11 @@
-<a href="http://ubonin.myshopify.com/collections/all-products"><img class="center" height="450" width="600" src={{ 'front_picture_nov_10.jpg' | asset_url }} /></a>
+<a href="http://ubonin.myshopify.com/collections/all-products">
+
+<div id="slideshow">
+    <img class="center first" height="495" width="660" src={{ 'ubonin_main.jpg' | asset_url }} />
+    <img class="center" height="495" width="660" src={{ 'Fall2011.jpg' | asset_url }} />
+</div>
+
+</a>
 
     <div class="article" id="latest-blog">
       <h3 class="article-head-title">
@@ -15,3 +22,9 @@
         {{ blogs.news.articles.first.content }} 
       </div>   
     </div>
+
+<script type="text/javascript">
+jQuery(document).ready(function() {
+  jQuery('#slideshow').cycle({timeout: 5000});
+});
+</script>

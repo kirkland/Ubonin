@@ -7,16 +7,29 @@
 
 
 
-<div class="product">
+{% if product.available %}
+  <div class="product">
+{% else %}
+  <div class="product sold-out">
+{% endif %}
+
     <a href="{{ product.url | within: collection }}" title="{{ product.title | escape }} &mdash; {{ product.description | strip_html | truncate: 50 | escape }}"><img src="{{ product.images.first | product_img_url: 'medium' }}" alt="{{ product.title | escape }}" /></a>
 
 
     <div class="product_title">
         <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
     </div>
-    <div class="product_price">
-        {{ product.price | money }}{% if product.compare_at_price_max > product.price %} <del>{{ product.compare_at_price_max | money }}</del>{% endif %}
-    </div>
+
+
+    {% if product.available %}
+      <div class="product_price">
+          {{ product.price | money }}{% if product.compare_at_price_max > product.price %} <del>{{ product.compare_at_price_max | money }}</del>{% endif %}
+      </div>
+    {% else %}
+       <div class="sold-out-message">
+         Sorry, temporarily sold out!
+       </div>
+    {% endif %}
 
 </div>
 

@@ -8,8 +8,15 @@ Created by Jared Burns of sofamade.com
 /* @group Structure */
 
 body {
-	font: 14px/1.45em {{ settings.regular_font }};
-	background: #323639 url({{ 'body.png' | asset_url }}) repeat;
+    font: 14px/1.45em {{ settings.regular_font }};
+    background: #807669;
+}
+
+#content {
+    background-color: #fff;
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 * {
@@ -216,9 +223,12 @@ body {
 /* @group Mini-Header */
 
 #mini-header {
-	background: #e0dfc9 url({{ 'mini-header.png' | asset_url }}) repeat-x center top;
+	background: #fff url({{ 'mini-header.png' | asset_url }}) repeat-x center top;
 	border-top: 1px solid #fff;
 	padding: 6px 0;
+        width: 876px;
+        margin-left: auto;
+        margin-right: auto;
 }
 
 #shopping-cart {
@@ -298,12 +308,12 @@ ul#collections li, ul#links li, ul#product_categories li {
 #layout-sidemenu li {
   background: none !important;
   padding: 3px 0 3px 3px !important;
-  text-align: center;
+  text-align: left;
   margin-left: 0px;
 }
 
 #layout-sidemenu h3 {
-  text-align: center;
+  text-align: left;
 }
 
 ul#featuring {
@@ -594,13 +604,22 @@ ul#blogs li {
 #footer {
 	color: #fff;
 	font-size: 11px;
-	background: url({{ 'footer.png' | asset_url }}) repeat-x center top;
+	
 	padding: 15px 0 70px;
+  background: url({{ 'footer.png' | asset_url }}) repeat-x center top;
+  width: 920px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
 }
 
 #footer-right {
 	font-size: 12px;
 	float: right;
+}
+
+#footer .container {
+  
 }
 
 /* @end */
@@ -923,7 +942,7 @@ ol li {
   display: block;
   text-align: center;
   font-size: 18px;
-  margin-top: 200px;
+  margin-top: 50px;
   color: red;
   font-weight: bold;
 }
@@ -961,5 +980,20 @@ ol li {
     font-size: 11px;
 }
 
+.sold-out-message {
+  color: red;
+  font-size: 11px;
+  width: 200px;
+  text-align: center;
+}
+
+#footer {
+    width: 900px;    
+    padding-bottom: 0px;
+}
+
+#slideshow { height: 495px; }
+#slideshow img { display: none; }
+#slideshow img.first { display: block }
 
 /* End of Stylesheet */
